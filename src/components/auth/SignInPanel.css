@@ -1,0 +1,63 @@
+.sign-in {
+  display: grid;
+  gap: var(--space-2xs);
+  padding: var(--space-md);
+  border: var(--border-subtle);
+  border-left: 2px solid var(--color-accent-interactive);
+  background-color: var(--color-surface-raised);
+}
+
+.sign-in--notice {
+  border-left-color: var(--color-warm-apricot);
+}
+
+.sign-in__title {
+  font-size: var(--font-size-lg);
+}
+
+.sign-in__description {
+  max-width: 52ch;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.sign-in__status {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.sign-in--signed-in {
+  border-left-color: var(--color-warm-coral);
+}
+
+.sign-in__account {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.sign-in__email {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.sign-in__sign-out {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.sign-in__sign-out:hover {
+  color: var(--color-accent-interactive);
+}
+.sign-in__email-link {
+  justify-self: start;
+  color: var(--color-accent-interactive);
+  font-size: var(--font-size-sm);
+  text-underline-offset: 0.2em;
+}
+

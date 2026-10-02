@@ -1,0 +1,102 @@
+.mood-finder__options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xs);
+  margin-top: var(--space-xl);
+}
+
+.mood-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  justify-content: center;
+  min-height: 7.5rem;
+  padding: var(--space-md);
+  border: var(--border-subtle);
+  background-color: var(--color-surface-raised);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.mood-option:hover {
+  border-color: var(--color-accent-interactive);
+}
+
+.mood-option--selected {
+  background-color: var(--color-surface-dark);
+  border-color: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+}
+
+/* A shape, not only a colour, marks the selected mood. */
+.mood-option__marker {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-warm-coral);
+}
+
+.mood-option__label {
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.mood-option__count {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text-muted);
+}
+
+.mood-option--selected .mood-option__count {
+  color: var(--color-text-on-dark-muted);
+}
+
+.mood-option:has(input:focus-visible) {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.mood-finder__results {
+  margin-top: var(--space-xl);
+  min-height: 8rem;
+}
+
+.mood-finder__status {
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.mood-finder__invitation {
+  padding: var(--space-xl) 0;
+  border-top: var(--border-subtle);
+  border-bottom: var(--border-subtle);
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .mood-finder__options {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .mood-option {
+    min-height: 9.5rem;
+    padding: var(--space-lg);
+  }
+
+  .mood-finder__invitation {
+    font-size: var(--font-size-xl);
+  }
+}

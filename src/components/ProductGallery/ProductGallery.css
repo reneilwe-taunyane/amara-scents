@@ -1,0 +1,27 @@
+.product-gallery {
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.product-gallery__thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-gallery__thumbnail {
+  display: block;
+  width: 4.5rem;
+  padding: 0;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-sm);
+  background: none;
+  overflow: hidden;
+}
+
+.product-gallery__thumbnail--active {
+  border-color: var(--color-accent-interactive);
+}

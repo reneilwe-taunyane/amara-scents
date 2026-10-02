@@ -1,0 +1,96 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card__media-link {
+  display: block;
+  overflow: hidden;
+}
+
+.product-card__media-link .product-image {
+  transition: transform var(--transition-base);
+}
+
+.product-card:hover .product-card__media-link .product-image {
+  transform: scale(1.02);
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  flex: 1;
+  padding: var(--space-md) 0 0;
+}
+
+.product-card__name {
+  font-size: var(--font-size-lg);
+}
+
+.product-card__link {
+  text-decoration: none;
+}
+
+.product-card__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.24em;
+  text-decoration-color: var(--color-accent-interactive);
+}
+
+.product-card__notes {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.product-card__mood {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.product-card__price {
+  margin-top: var(--space-2xs);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.product-card .size-selector {
+  margin-top: var(--space-2xs);
+}
+
+.product-card__actions {
+  display: grid;
+  gap: var(--space-3xs);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+}
+
+.product-card__add {
+  min-height: 2.875rem;
+  padding: 0 var(--space-md);
+  border: var(--border-width) solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.product-card__add:hover {
+  background-color: #d2553a;
+  border-color: #d2553a;
+}
+
+.product-card__status {
+  min-height: 1.25rem;
+  font-size: var(--font-size-xs);
+  color: var(--color-accent-interactive);
+}

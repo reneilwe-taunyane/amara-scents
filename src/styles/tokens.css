@@ -1,0 +1,120 @@
+/*
+ * Amara Scents global design tokens.
+ * Colour values are taken verbatim from docs/DESIGN_SYSTEM.md and re-weighted
+ * so Deep Espresso and Butter Cream lead, with Plum, Coral and Apricot as
+ * supporting accents only.
+ * Documented breakpoints: mobile 390px, tablet 768px, desktop 1440px.
+ * Breakpoints are repeated as literal values in media queries because custom
+ * media queries are not resolved by the current build pipeline.
+ */
+
+:root {
+  /* Brand palette */
+  --color-deep-espresso: #251713;
+  --color-deep-plum: #3b1738;
+  --color-muted-aubergine: #6b3a63;
+  --color-warm-coral: #e9684a;
+  --color-warm-apricot: #f4a261;
+  --color-butter-cream: #fff4df;
+  --color-soft-blush: #f3c6c8;
+  --color-champagne-gold: #c9a66b;
+
+  /* Surfaces: espresso and cream carry the site */
+  --color-surface: var(--color-butter-cream);
+  --color-surface-raised: #fffaf0;
+  --color-surface-dark: var(--color-deep-espresso);
+  --color-surface-blush: var(--color-soft-blush);
+
+  /* Text */
+  --color-text: var(--color-deep-espresso);
+  --color-text-muted: #6a554e;
+  --color-text-on-dark: var(--color-butter-cream);
+  --color-text-on-dark-muted: #d9c6ba;
+
+  /* Interactive */
+  --color-accent: var(--color-warm-coral);
+  /* Espresso on coral measures 5.4:1; butter cream on coral only reaches
+     2.9:1, which fails WCAG AA for button text. */
+  --color-on-accent: var(--color-deep-espresso);
+  --color-accent-interactive: var(--color-muted-aubergine);
+  --color-accent-warm: var(--color-warm-apricot);
+  --color-focus: var(--color-deep-espresso);
+
+  /* Only the hero carries a gradient; everything else is a solid surface */
+  --gradient-hero: linear-gradient(158deg, #3b1738 0%, #251713 100%);
+
+  /* Typography */
+  --font-display: 'Castoro Titling', 'Cormorant Garamond', 'Iowan Old Style',
+    Palatino, Georgia, serif;
+  --font-script: 'Pinyon Script', 'Snell Roundhand', 'Apple Chancery', cursive;
+  --font-body: 'Rosarivo', 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial,
+    sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.0625rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.625rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.625rem;
+  --font-size-4xl: 3.25rem;
+
+  --line-height-display: 1.16;
+  --line-height-heading: 1.24;
+  --line-height-base: 1.7;
+  --line-height-loose: 1.85;
+
+  --letter-spacing-display: 0.005em;
+  --letter-spacing-wide: 0.08em;
+  --letter-spacing-widest: 0.2em;
+
+  /* Spacing scale */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1.125rem;
+  --space-md: 1.75rem;
+  --space-lg: 2.5rem;
+  --space-xl: 3.75rem;
+  --space-2xl: 5.5rem;
+
+  /* Layout */
+  --layout-max-width: 88rem;
+  --layout-reading-width: 38rem;
+  --layout-gutter: var(--space-md);
+  --header-height: 4.25rem;
+
+  /* Restrained radii: this is a fragrance house, not a SaaS product */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  /* Borders */
+  --border-width: 1px;
+  --border-subtle: var(--border-width) solid rgb(37 23 19 / 0.14);
+  --border-strong: var(--border-width) solid rgb(37 23 19 / 0.32);
+  --border-on-dark: var(--border-width) solid rgb(255 244 223 / 0.24);
+
+  /* Shadows are used sparingly and only to lift photography */
+  --shadow-sm: 0 1px 2px rgb(37 23 19 / 0.05);
+  --shadow-md: 0 10px 28px rgb(37 23 19 / 0.09);
+
+  /* Motion */
+  --transition-fast: 140ms ease;
+  --transition-base: 240ms ease;
+  --focus-ring-width: 2px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --layout-gutter: var(--space-lg);
+    --header-height: 5.25rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --layout-gutter: var(--space-xl);
+  }
+}

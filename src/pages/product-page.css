@@ -1,0 +1,116 @@
+.product-page__breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.product-page__breadcrumb a {
+  text-decoration: none;
+}
+
+.product-page__breadcrumb a:hover {
+  color: var(--color-accent-interactive);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.product-page__breadcrumb li + li::before {
+  content: '/';
+  margin-right: var(--space-2xs);
+  color: var(--color-accent-interactive);
+}
+
+.product-page__layout {
+  display: grid;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.product-page__name {
+  margin-top: var(--space-2xs);
+  font-size: var(--font-size-3xl);
+}
+
+.product-page__description {
+  max-width: 48ch;
+  margin-top: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+.product-page__facts {
+  display: grid;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0 0;
+  padding: var(--space-md) 0;
+  border-top: var(--border-subtle);
+  border-bottom: var(--border-subtle);
+}
+
+.product-page__facts dt {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.product-page__facts dd {
+  margin: var(--space-3xs) 0 0;
+  font-size: var(--font-size-md);
+}
+
+.product-page__price {
+  margin: var(--space-lg) 0 var(--space-md);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.product-page__price-size {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.product-page__quantity {
+  margin-top: var(--space-md);
+}
+
+.product-page__actions {
+  display: grid;
+  gap: var(--space-3xs);
+  margin-top: var(--space-lg);
+}
+
+.product-page__status {
+  min-height: 1.25rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-interactive);
+}
+
+.product-page__back {
+  margin-top: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .product-page__layout {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+  .product-page__name {
+    font-size: var(--font-size-4xl);
+  }
+}

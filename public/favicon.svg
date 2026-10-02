@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Amara Scents">
+  <rect width="64" height="64" rx="14" fill="#3B1738" />
+  <path
+    d="M32 13 L45 47 H38.5 L35.8 39.5 H28.2 L25.5 47 H19 Z M32 25.5 L29.6 33.5 H34.4 Z"
+    fill="#FFF4DF"
+  />
+  <circle cx="48" cy="17" r="5" fill="#E9684A" />
+</svg>

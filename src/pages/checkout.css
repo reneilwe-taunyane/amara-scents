@@ -1,0 +1,151 @@
+.checkout {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: start;
+  margin-top: var(--space-xl);
+}
+
+.checkout__main {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.checkout__signed-in-note {
+  margin-top: var(--space-3xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.checkout-form {
+  display: grid;
+  gap: var(--space-md);
+  justify-items: start;
+}
+
+.checkout-form__title {
+  font-size: var(--font-size-xl);
+}
+
+.checkout-form__grid {
+  display: grid;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.checkout-field {
+  display: grid;
+  gap: var(--space-3xs);
+  min-width: 0;
+}
+
+.checkout-field label {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.checkout-field input[aria-invalid='true'] {
+  border-color: var(--color-accent);
+  border-width: 2px;
+}
+
+.checkout-field__error,
+.checkout-form__error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-interactive);
+}
+
+/* Errors are marked with a glyph and a prefix, not colour alone. */
+.checkout-field__error > span,
+.checkout-form__error > span {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2rem;
+  border-radius: 50%;
+  background-color: var(--color-accent-interactive);
+  color: var(--color-butter-cream);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.checkout-form__error {
+  padding: var(--space-2xs) var(--space-sm);
+  border: var(--border-subtle);
+  border-left: 2px solid var(--color-accent);
+  background-color: var(--color-surface-raised);
+}
+
+.checkout-form__fineprint {
+  max-width: 46ch;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.checkout__summary {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.checkout__summary-title {
+  font-size: var(--font-size-lg);
+}
+
+.checkout__items {
+  display: grid;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checkout-item {
+  display: grid;
+  grid-template-columns: 3.75rem 1fr auto;
+  gap: var(--space-sm);
+  align-items: center;
+  padding-bottom: var(--space-md);
+  border-bottom: var(--border-subtle);
+}
+
+.checkout-item__name {
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+}
+
+.checkout-item__meta {
+  padding-top: 2px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.checkout-item__total {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .checkout-form__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .checkout-field--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1440px) {
+  .checkout {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
