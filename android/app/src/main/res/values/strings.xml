@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Amara Scents</string>
+    <string name="title_activity_main">Amara Scents</string>
+    <string name="package_name">com.amarascents.app</string>
+    <string name="custom_url_scheme">com.amarascents.app</string>
+</resources>

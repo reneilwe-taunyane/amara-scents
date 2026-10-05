@@ -7,6 +7,7 @@ export type CartAction =
   | { type: 'decreaseQuantity'; lineId: string }
   | { type: 'removeItem'; lineId: string }
   | { type: 'clear' }
+  | { type: 'hydrate'; items: CartItem[] }
 
 function clampQuantity(quantity: number): number {
   return Math.min(Math.max(quantity, 1), MAX_QUANTITY_PER_LINE)
@@ -60,6 +61,9 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
 
     case 'clear':
       return { items: [] }
+
+    case 'hydrate':
+      return { items: action.items }
   }
 }
 

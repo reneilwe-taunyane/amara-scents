@@ -3,9 +3,11 @@ import type { ReactNode } from 'react'
 import { getPriceForSize } from '../data/products'
 import type { Product, ProductSize } from '../data/products'
 import { cartReducer, getCartItemCount, getCartSubtotal } from './cartReducer'
-import { loadCartItems, saveCartItems } from './cartStorage'
+import { loadCartItems, saveCartItems, loadSupabaseCartItems, saveSupabaseCartItems } from './cartStorage'
 import { CartContext } from './CartContext'
 import { createLineId } from './types'
+import { useAuth } from '../auth/AuthContext'
+import { isSupabaseConfigured } from '../lib/supabase'
 
 type CartProviderProps = {
   children: ReactNode
@@ -16,11 +18,34 @@ function createInitialState() {
 }
 
 export function CartProvider({ children }: CartProviderProps) {
+  const { user } = useAuth()
   const [state, dispatch] = useReducer(cartReducer, undefined, createInitialState)
 
   useEffect(() => {
+    let cancelled = false
+
+    async function hydrate() {
+      if (user && isSupabaseConfigured) {
+        const items = await loadSupabaseCartItems()
+        if (!cancelled) {
+          dispatch({ type: 'hydrate', items })
+        }
+      }
+    }
+
+    hydrate()
+    return () => {
+      cancelled = true
+    }
+  }, [user?.id])
+
+  useEffect(() => {
     saveCartItems(state.items)
-  }, [state.items])
+
+    if (user && isSupabaseConfigured) {
+      void saveSupabaseCartItems(state.items)
+    }
+  }, [state.items, user?.id])
 
   const value = useMemo(
     () => ({
